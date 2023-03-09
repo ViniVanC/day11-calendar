@@ -1,5 +1,12 @@
-import moment from "moment";
 import { useEffect, useState } from "react";
+import moment from "moment";
+
+const startOfWeek = moment().startOf("isoWeek");
+
+const daysOfWeek = [];
+for (let i = 0; i < 7; i++) {
+  daysOfWeek.push(moment(startOfWeek).add(i, "days").format("ddd"));
+}
 
 export const useCalendar = () => {
   const [monthDays, setMonthDays] = useState(null);
@@ -16,5 +23,5 @@ export const useCalendar = () => {
     setYear(today.year());
   }, []);
 
-  return { day, monthName, monthDays, year };
+  return { day, daysOfWeek, monthName, monthDays, year };
 };

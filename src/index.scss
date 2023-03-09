@@ -5,8 +5,11 @@
 @tailwind utilities;
 
 * {
-  font-family: "Montserrat", sans-serif;
   outline: none;
+}
+
+#root {
+  font-family: "Montserrat", sans-serif;
 }
 
 .Container {
