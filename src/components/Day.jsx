@@ -1,13 +1,24 @@
 import React from "react";
 import { useCalendar } from "../hook/useCalendar";
 
-export const Day = ({ id, dayNumber, dayNow, events }) => {
+export const Day = ({ id, dayNumber, dayNow, events, num }) => {
   const { handleOpenInfoBubble } = useCalendar();
   return (
     <>
       <div
         className={`relative flex h-20 w-20 items-end justify-end rounded-xl p-2 font-BungeeShade text-[30px] max-sm:w-full ${
           dayNow ? "bg-green text-black" : "bg-black text-green"
+        } ${
+          num === 5 ||
+          num === 6 ||
+          num === 12 ||
+          num === 13 ||
+          num === 19 ||
+          num === 20 ||
+          num === 26 ||
+          num === 27
+            ? "text-pink"
+            : ""
         }`}
         style={{
           boxShadow: dayNow
