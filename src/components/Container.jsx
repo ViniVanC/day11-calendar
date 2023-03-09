@@ -6,7 +6,7 @@ export const Container = () => {
   const { day, monthName, year } = useCalendar();
 
   return (
-    <div className="Container rounded-xl bg-black p-10 text-yellow">
+    <div className="Container rounded-xl bg-black p-10 text-yellow max-sm:w-full">
       <header>
         <div className="flex items-end gap-[10px] text-[30px] font-bold leading-[40px]">
           <span>{day}</span>

@@ -8,7 +8,7 @@ export const Month = () => {
 
   return (
     <div>
-      <div className="mb-4 grid grid-cols-7 gap-5">
+      <div className="mb-4 hidden grid-cols-7 gap-5 sm:grid">
         {daysOfWeek?.map((day, i) => (
           <div
             key={day}
@@ -23,7 +23,7 @@ export const Month = () => {
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-7 gap-5">
+      <div className="grid grid-cols-7 gap-5 max-sm:flex max-sm:flex-col">
         {daysList?.map(({ id, dayNumber, events }) => (
           <Day
             key={id}

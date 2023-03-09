@@ -16,7 +16,7 @@ export const DayInfoBubble = () => {
   } = useCalendar();
   return (
     <>
-      <div className="absolute top-1/2 left-1/2 z-[100] min-h-max w-full max-w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-xl bg-black p-10 drop-shadow-xl">
+      <div className="fixed top-1/2 left-1/2 z-[100] min-h-max w-full max-w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-xl bg-black p-10 drop-shadow-xl">
         <button
           className="absolute top-[15px] right-[15px] text-[40px]"
           onClick={() => setOpenInfoBubble(false)}
@@ -74,7 +74,7 @@ export const DayInfoBubble = () => {
         </form>
       </div>
       <div
-        className="absolute top-0 left-0 h-[100vh] w-[100vw] bg-black/40 backdrop-blur-xl"
+        className="fixed top-0 left-0 h-[100vh] w-[100vw] bg-black/40 backdrop-blur-xl"
         onClick={() => setOpenInfoBubble(false)}
       />
     </>

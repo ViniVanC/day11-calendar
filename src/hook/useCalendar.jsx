@@ -27,6 +27,12 @@ export const CalendarProvider = ({ children }) => {
   const [currentDayId, setCurrentDayId] = useState();
   const [currentDayEvens, setCurrentDayEvens] = useState([]);
 
+  if (openInfoBubble) {
+    document.body.classList.add("lock");
+  } else {
+    document.body.classList.remove("lock");
+  }
+
   // створюю масив з днями
   useEffect(() => {
     let arr = [];

@@ -6,7 +6,7 @@ export const Day = ({ id, dayNumber, dayNow, events }) => {
   return (
     <>
       <div
-        className={`relative flex h-20 w-20 items-end justify-end rounded-xl p-2 font-BungeeShade text-[30px] ${
+        className={`relative flex h-20 w-20 items-end justify-end rounded-xl p-2 font-BungeeShade text-[30px] max-sm:w-full ${
           dayNow ? "bg-green text-black" : "bg-black text-green"
         }`}
         style={{

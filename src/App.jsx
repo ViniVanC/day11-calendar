@@ -2,7 +2,7 @@ import { Container } from "./components/Container";
 
 function App() {
   return (
-    <div className="flex h-[100vh] items-center justify-center overflow-x-hidden bg-gradient-yellowPink">
+    <div className="flex min-h-[100vh] justify-center bg-gradient-yellowPink py-[30px] px-[15px] sm:items-center">
       <Container />
     </div>
   );
