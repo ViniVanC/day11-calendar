@@ -12,7 +12,7 @@ module.exports = {
       },
       backgroundImage: (theme) => ({
         "gradient-yellowPink":
-          "linear-gradient(0deg, rgba(254,206,171,1) 0%, rgba(255,132,124,1) 100%)",
+          "linear-gradient(45deg, rgba(254,206,171,1) 0%, rgba(255,132,124,1) 100%)",
       }),
       fontFamily: {
         BungeeShade: ["Bungee Shade", "cursive"],
