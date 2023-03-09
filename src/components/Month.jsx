@@ -1,10 +1,10 @@
 import React from "react";
 import { useCalendar } from "../hook/useCalendar";
-
 import { Day } from "./Day";
+import { DayInfoBubble } from "./DayInfoBubble";
 
 export const Month = () => {
-  const { day, daysOfWeek, daysList } = useCalendar();
+  const { day, daysOfWeek, daysList, openInfoBubble } = useCalendar();
 
   return (
     <div>
@@ -24,15 +24,17 @@ export const Month = () => {
         ))}
       </div>
       <div className="grid grid-cols-7 gap-5">
-        {daysList?.map(({ id, dayNumber }) => (
+        {daysList?.map(({ id, dayNumber, events }) => (
           <Day
             key={id}
             id={id}
             dayNumber={dayNumber}
             dayNow={day === dayNumber}
+            events={events}
           />
         ))}
       </div>
+      {openInfoBubble ? <DayInfoBubble /> : ""}
     </div>
   );
 };
