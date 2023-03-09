@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import moment from "moment";
+import { v4 } from "uuid";
 
 const startOfWeek = moment().startOf("isoWeek");
 
@@ -13,6 +14,18 @@ export const useCalendar = () => {
   const [monthName, setMonthName] = useState(null);
   const [day, setDay] = useState(null);
   const [year, setYear] = useState(null);
+  const [daysList, setDaysList] = useState([]);
+
+  // створюю масив з днями
+  useEffect(() => {
+    let arr = [];
+
+    for (let i = 1; i <= monthDays; i++) {
+      arr.push({ id: v4(), dayNumber: i, openEventBubble: false });
+    }
+
+    setDaysList(arr);
+  }, [monthDays]);
 
   useEffect(() => {
     const today = moment();
@@ -23,5 +36,5 @@ export const useCalendar = () => {
     setYear(today.year());
   }, []);
 
-  return { day, daysOfWeek, monthName, monthDays, year };
+  return { day, daysList, setDaysList, daysOfWeek, monthName, monthDays, year };
 };

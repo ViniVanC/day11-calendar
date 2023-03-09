@@ -1,11 +1,10 @@
 import React from "react";
 import { useCalendar } from "../hook/useCalendar";
-import { useDB } from "../hook/useDB";
+
 import { Day } from "./Day";
 
 export const Month = () => {
-  const { day, daysOfWeek } = useCalendar();
-  const { daysList } = useDB();
+  const { day, daysOfWeek, daysList } = useCalendar();
 
   return (
     <div>
@@ -26,7 +25,12 @@ export const Month = () => {
       </div>
       <div className="grid grid-cols-7 gap-5">
         {daysList?.map(({ id, dayNumber }) => (
-          <Day key={id} dayNumber={dayNumber} dayNow={day === dayNumber} />
+          <Day
+            key={id}
+            id={id}
+            dayNumber={dayNumber}
+            dayNow={day === dayNumber}
+          />
         ))}
       </div>
     </div>
