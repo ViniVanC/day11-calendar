@@ -17,7 +17,9 @@ export const Day = ({ id, dayNumber, dayNow, events, num }) => {
           num === 20 ||
           num === 26 ||
           num === 27
-            ? "text-pink"
+            ? dayNow
+              ? "bg-pink text-black"
+              : "text-pink"
             : ""
         }`}
         style={{
